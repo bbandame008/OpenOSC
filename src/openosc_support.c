@@ -54,7 +54,7 @@ openosc_get_process_name(char *name, int name_len)
     snprintf(path, OSC_PROC_PATH_MAX, "/proc/%d/cmdline", getpid());
     fd = fopen(path, "r");
     if (fd != NULL) {
-        size_t size = fread((void *)name, sizeof(char), name_len-1, fd);
+        size_t size = fread((void *)name, sizeof(char), name_len, fd);
 	if (size > 0) {
 	    name[size]='\0';
 	}
