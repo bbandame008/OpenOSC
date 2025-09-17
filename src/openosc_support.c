@@ -56,7 +56,7 @@ openosc_get_process_name(char *name, int name_len)
     if (fd != NULL) {
         size_t size = fread((void *)name, sizeof(char), name_len, fd);
 	if (size > 0) {
-	    name[size]='\0';
+	    name[size-1]='\0';
 	}
 	fclose(fd);
         return TRUE;
