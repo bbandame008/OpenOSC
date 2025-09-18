@@ -48,7 +48,7 @@ openosc_get_process_name(char *name, int name_len)
     char path[OSC_PROC_PATH_MAX];
     FILE* fd;
 
-    if (!name && name_len == 0)
+    if (!name)
 	return FALSE;
 
     snprintf(path, OSC_PROC_PATH_MAX, "/proc/%d/cmdline", getpid());
